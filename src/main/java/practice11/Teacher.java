@@ -3,14 +3,15 @@ package practice11;
 import java.util.ArrayList;
 import java.util.LinkedList;
 
-public class Teacher extends Person implements ClassListener{
+public class Teacher extends Person implements JoinListener,AssignListener{
     private LinkedList<Klass> classes = new LinkedList<Klass>();
 
     public Teacher(int id, String name, int age, LinkedList<Klass> classes) {
         super(id, name, age);
         this.classes = classes;
-        this.classes.forEach(klass -> {
-            klass.register(this);
+        classes.forEach(klass -> {
+            klass.getJoinListeners().add(this);
+            klass.getAssignListeners().add(this);
         });
     }
 
