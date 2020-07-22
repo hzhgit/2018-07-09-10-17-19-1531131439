@@ -1,6 +1,6 @@
 package practice02;
 
-public class Student extends Person{
+public class Student extends Person {
     protected int Klass;
 
     public Student(String name, int age, int klass) {
@@ -9,7 +9,7 @@ public class Student extends Person{
     }
 
     @Override
-    public String introduce(){
+    public String introduce() {
         return ("I am a Student. I am at Class " + this.getKlass() + ".");
     }
 

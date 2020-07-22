@@ -1,7 +1,7 @@
 package practice06;
 
 public class Teacher extends Person{
-    protected int Klass;
+    protected Integer Klass;
 
     public Teacher(String name, int age, int klass) {
         super(name, age);
@@ -14,12 +14,7 @@ public class Teacher extends Person{
 
     @Override
     public String introduce(){
-        String Klass = "";
-        if (this.getKlass() > 0){
-            return ("My name is Tom. I am "+ this.getAge() + " years old. I am a Teacher. I teach Class "+ this.getKlass()+".");
-        }else{
-            return ("My name is Tom. I am "+ this.getAge() + " years old. I am a Teacher. I teach No Class.");
-        }
+        return super.introduce() + " I am a Teacher. I teach " + (this.Klass == null ? "No Class" : ("Class " + this.Klass)) + ".";
     }
 
     public int getKlass() {
